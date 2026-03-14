@@ -137,14 +137,28 @@ export default function Dashboard({ setToken }) {
           from { opacity: 0; transform: translateY(16px); }
           to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Tablet */
         @media (max-width: 1100px) {
           .content-layout { grid-template-columns: 1fr; }
+          .weather-col { position: static; }
           .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
+        /* Mobile */
         @media (max-width: 640px) {
-          .stats-grid { grid-template-columns: 1fr; }
-          .charts-row { grid-template-columns: 1fr; }
           .dashboard-main { padding: 16px; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+          .charts-row { grid-template-columns: 1fr; }
+          .stat-value { font-size: 20px; }
+          .stat-icon { width: 40px; height: 40px; font-size: 18px; }
+          .stat-card { padding: 14px 16px; gap: 12px; }
+          .dashboard-header h2 { font-size: 20px; }
+        }
+
+        /* Small mobile */
+        @media (max-width: 400px) {
+          .stats-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 

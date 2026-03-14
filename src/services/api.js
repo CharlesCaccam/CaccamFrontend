@@ -32,14 +32,17 @@ api.interceptors.response.use(
   }
 );
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
+// -- Auth --
 export const login = (credentials) => api.post('/login', credentials);
 export const logout = () => api.post('/logout');
 
-// ── Dashboard data ────────────────────────────────────────────────────────────
+// -- Dashboard data --
 export const getEnrollmentTrends = () => api.get('/dashboard/enrollment-trends');
 export const getCourseDistribution = () => api.get('/dashboard/course-distribution');
 export const getAttendanceData = () => api.get('/dashboard/attendance');
 export const getDashboardSummary = () => api.get('/dashboard/summary');
+
+// -- Courses --
+export const getCourses = () => api.get('/courses');
 
 export default api;
